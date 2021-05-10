@@ -1,0 +1,7 @@
+<div class="container">
+  <h2>Editing <%= @tracker.name %></h2>
+  <%= simple_form_for @tracker do |f| %>
+    <%= f.input :name %>
+    <%= f.submit %>
+  <% end %>
+</div>

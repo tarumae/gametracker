@@ -30,5 +30,11 @@ import "bootstrap";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  // initSelect2();
+  // initSelect2();w
+  const gamesTab = document.getElementById('gamesTab');
+  const gamesTabContent = document.getElementById('gamesTabContent');
+  if (gamesTab && gamesTabContent) {
+    gamesTab.firstElementChild.querySelector('a').classList.add('active')
+    gamesTabContent.firstElementChild.classList.add('show', 'active')
+  }
 });

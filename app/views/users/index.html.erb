@@ -1,0 +1,9 @@
+<div class="container">
+  Your trackers
+  <%= link_to "Add a new tracker", new_tracker_path %>
+  <ul>
+    <% @trackers.each do |tracker| %>
+      <li><%= link_to tracker.name, tracker_path(tracker)%></li>
+    <% end %>
+  </ul>
+</div>
