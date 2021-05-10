@@ -4,4 +4,8 @@
     <%= f.input :name %>
     <%= f.submit %>
   <% end %>
+
+  <% @addedgames.each do |game| %>
+    <p><%= game.game.title %> <%= link_to "x", tracker_added_game_path(@tracker, game), method: :delete, data: { confirm: "Are you sure you wish to delete this game from the tracker?"} %></p>
+  <% end %>
 </div>

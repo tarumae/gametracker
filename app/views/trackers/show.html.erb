@@ -2,7 +2,7 @@
   <h1><%= @tracker.name %></h1>
   <%= link_to "Edit this tracker", edit_tracker_path(@tracker)  %>
   <%= link_to "Delete this tracker", tracker_path(@tracker), method: :delete  %>
-  <%= link_to "Add game",  %>
+  <%= link_to "Add game", new_tracker_added_game_path(@tracker)  %>
 
   <h4>List of games in this tracker</h4>
 

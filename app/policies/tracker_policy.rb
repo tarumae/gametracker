@@ -12,7 +12,7 @@ class TrackerPolicy < ApplicationPolicy
   def create?
     true
   end
-  
+
   def show?
     record.user == user
   end
@@ -28,5 +28,4 @@ class TrackerPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
-
 end

@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Add a new game to <%= @tracker.name %></h1>
+
+  <%= simple_form_for [@tracker, @addedgame] do |f| %>
+    <%= f.input :game_id, collection: AddedGame::GAMES, label: "Choose the game you'd wish to add to your tracker" %>
+    <%= f.submit "Add Game" %>
+  <% end %>
+  
+</div>

@@ -1,5 +1,5 @@
 class TrackersController < ApplicationController
-  before_action :set_tracker, only: [:show, :edit, :update, :destroy]
+  before_action :set_tracker, only: %i[show edit update destroy]
 
   def new
     @tracker = Tracker.new
@@ -21,7 +21,9 @@ class TrackersController < ApplicationController
 
   def show; end
 
-  def edit; end
+  def edit
+    @addedgames = AddedGame.where(tracker: @tracker)
+  end
 
   def update
     if @tracker.update(tracker_params)
@@ -42,6 +44,7 @@ class TrackersController < ApplicationController
       redirect_to tracker_path(@tracker)
     end
   end
+
   private
 
   def set_tracker
