@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import { getJSON } from "jquery";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -36,5 +37,10 @@ document.addEventListener('turbolinks:load', () => {
   if (gamesTab && gamesTabContent) {
     gamesTab.firstElementChild.querySelector('a').classList.add('active')
     gamesTabContent.firstElementChild.classList.add('show', 'active')
+  }
+  const bdo = document.getElementById('g3')
+  
+  if (bdo) {
+    bdo.innerText = gon.response
   }
 });

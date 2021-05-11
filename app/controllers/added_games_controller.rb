@@ -27,7 +27,7 @@ class AddedGamesController < ApplicationController
       redirect_to tracker_path(@tracker)
     else
       flash[:alert] = "Something went wrong. Try again later."
-      redirect_to tracker_path(@tracker)
+      redirect_to edit_tracker_path(@tracker)
     end
   end
 

@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'nokogiri'
+
 class TrackersController < ApplicationController
   before_action :set_tracker, only: %i[show edit update destroy]
 
@@ -19,7 +22,15 @@ class TrackersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @game = @tracker.games.find(3)
+    url = @game.url
+    html_file = URI.open(url).read
+    html_doc = Nokogiri::HTML(html_file)
+
+    @response = html_doc.search(".view_detail_area").text.gsub(/\r\n\s+/, "\n").gsub("View list", "")
+    gon.response = @response
+  end
 
   def edit
     @addedgames = AddedGame.where(tracker: @tracker)
