@@ -23,6 +23,10 @@ class TrackersController < ApplicationController
   end
 
   def show
+    # Need to figure out a way to make this work for every game as scraping is dependent on classes which are different for every site.
+    # Store class names in the game model? Still needs manual checking.
+    # Any way to automate the process?
+
     @game = @tracker.games.find(3)
     url = @game.url
     html_file = URI.open(url).read
