@@ -12,6 +12,8 @@ module Gametracker
       generate.assets false
       generate.helper false
       generate.test_framework :test_unit, fixture: false
+      config.active_job.queue_adapter = :sidekiq
+      config.eager_load_paths << Rails.root.join('lib')
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0

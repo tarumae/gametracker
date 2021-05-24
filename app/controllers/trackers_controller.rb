@@ -1,6 +1,3 @@
-require 'open-uri'
-require 'nokogiri'
-
 class TrackersController < ApplicationController
   before_action :set_tracker, only: %i[show edit update destroy]
 
@@ -28,12 +25,7 @@ class TrackersController < ApplicationController
     # Any way to automate the process?
 
     @game = @tracker.games.find(3)
-    url = @game.url
-    html_file = URI.open(url).read
-    html_doc = Nokogiri::HTML(html_file)
-
-    @response = html_doc.search(".view_detail_area").text.gsub(/\r\n\s+/, "\n").gsub("View list", "")
-    gon.response = @response
+    gon.response = @game.content
   end
 
   def edit
