@@ -42,7 +42,7 @@ document.addEventListener('turbolinks:load', () => {
   const gw2 = document.getElementById('g6')
   
   if (bdo) {
-    bdo.innerText = gon.bdo
+    bdo.innerHTML = gon.bdo
   }
 
   if (gw2) {
