@@ -39,8 +39,13 @@ document.addEventListener('turbolinks:load', () => {
     gamesTabContent.firstElementChild.classList.add('show', 'active')
   }
   const bdo = document.getElementById('g3')
+  const gw2 = document.getElementById('g6')
   
   if (bdo) {
-    bdo.innerText = gon.response
+    bdo.innerText = gon.bdo
+  }
+
+  if (gw2) {
+    gw2.innerHTML = gon.gw2
   }
 });
