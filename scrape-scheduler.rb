@@ -1,5 +1,4 @@
-require 'sidekiq'
-require 'sidekiq-scheduler';
+require 'sidekiq-scheduler'
 require 'open-uri'
 require 'nokogiri'
 

@@ -1,11 +1,11 @@
-require 'sidekiq-scheduler';
+require 'sidekiq-scheduler'
 require 'open-uri'
 require 'nokogiri'
 
 class ScrapingJob < ApplicationJob
   self.queue_adapter = :sidekiq
 
-  def perform(*args)
+  def perform
     game = Game.find(3)
     url = game.url
     html_file = URI.open(url).read

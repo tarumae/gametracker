@@ -15,7 +15,7 @@
   </ul>
   <div class="tab-content" id="gamesTabContent">
   <% @tracker.games.each do |game| %>
-    <div class="tab-pane fade" id="g<%= game.id %>" role="tabpanel" aria-labelledby="g<%= game.id %>-tab"><%= game.url %></div>
+    <div class="tab-pane fade" id="g<%= game.id %>" role="tabpanel" aria-labelledby="g<%= game.id %>-tab"><%= game.content %></div>
   <% end %>
   </div>
 </div>
